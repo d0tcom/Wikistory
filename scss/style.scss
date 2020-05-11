@@ -1,0 +1,282 @@
+$font-title: Playfair Display, serif;
+$font-text: Raleway, sans-serif;
+
+$text-color: #2E3639;
+$bg-color: #F6F6F6;
+$card-bg-color: #FFF;
+
+$menu-bg-color: linear-gradient(158deg, #2E3639 52%, #404C51 100%), #2E3639;
+$input-bg: #344044;
+$menu-text-color: #566B73;
+
+$logo-color : #3D4B50;
+
+$shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-color;
+    font-family: $font-text;
+    letter-spacing: 0.02em;
+    color: $text-color;
+    font-size: 16px;
+}
+
+header {
+    background-color: $card-bg-color;
+    box-shadow: $shadow;
+    font-family: $font-title;
+    position: fixed;
+    top: 0;
+    padding: 20px 45px;
+    width: 100%;
+
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+
+    h2, h3 {
+        font-size: 1.125rem;
+        font-weight: 400;
+        margin-top: 5px;
+    
+
+        span {
+            font-weight: 700;
+        }
+    }
+    
+        button {
+            outline: none;
+            border-style: none;
+            position: absolute;
+            background-color: $text-color;
+            padding: 12px 16px;
+            color: $card-bg-color;
+            font-family: $font-text;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            transform: rotate(-90deg);
+            right: -31px;
+            top: 265%;
+            box-shadow: $shadow;
+        }
+
+        .icon {
+            width: 19px;
+            height: 18px;
+            right: 0;
+            margin-right: 7px;
+            transform: rotate(-90deg);
+            transition: .3s;
+            &.active {
+                transform: rotate(0deg);
+            }
+        }
+    
+
+
+}
+
+
+.articles {
+    li {
+        background-color: $card-bg-color;
+        padding: 24px;
+        margin: 20px;
+        list-style: none;
+        border-radius: 10px;
+        box-shadow: $shadow;
+        flex-direction: column;
+        transition: .3s;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 20px;
+
+            &:nth-child(1) {
+                color: $menu-text-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    figure {
+        display: none;
+    }
+    .first-ul {
+        margin-top: 155px;
+    }
+    ul {
+        li {
+            ul {
+                margin-top: initial;
+            }
+            li {
+                ul {
+                    margin-top: initial;
+                }
+                a {
+                    &:nth-child(1) {
+                        color: initial;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+   
+}
+
+
+aside {
+    .side-menu {
+        position: fixed;
+        width: 85%;//85%; // js -> 85%
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $menu-bg-color;
+        color: $menu-text-color;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        transition: .2s;
+        z-index: 2;
+        box-shadow: $shadow;
+        transform: translateX(-100%);
+    
+        &.active {
+            transform: translateX(0);
+        }
+    
+    .day-month {
+        display: flex;
+        
+        #month {
+            width: calc(80% - 5px);
+            margin-bottom: 10px;
+        }
+    
+        #day {
+            width: calc(30% - 5px);
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    
+        .logo {
+            color: $logo-color;
+            font-size: 2.25rem;
+            font-family: $font-title;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-shadow: $shadow;
+            text-align: center;
+            padding: 40px;
+        }
+    
+        p {
+            padding: 20px;
+        }
+    
+        label {
+            display: flex;
+            flex-direction: column;
+            padding: 0 20px;
+        }
+    
+        fieldset {
+            border-style: none;
+            padding: 20px;
+        }
+    
+        legend, span {
+            font-size: 1.375rem;
+            color: $bg-color;
+            font-family: $font-title;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+    
+        select {
+            border-style: none;
+            background: $input-bg;
+            color: $menu-text-color;
+            padding: 15px 18px;
+            border-radius: 5px;
+            font-size: 1.125rem;
+            font-family: $font-text;
+            appearance: none;
+            box-shadow: $shadow;
+            outline: none;
+            cursor: pointer;
+        }
+    
+        #century-select, #category, #lang {
+            width: 100%;
+        }
+    
+        .madeby {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 800px) {
+aside {
+    z-index: 3;
+    .side-menu {
+        transform: translateX(0);
+        max-width: 350px;
+    }
+}
+
+
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        .articles {
+            margin-left: 350px;
+            li {
+                &:hover {
+                    transform: translateY(-5px)
+                }
+            }
+        }
+    }
+
+    header {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        bottom: initial;
+        .top {
+            margin-left: 220px;
+        }
+        button {
+            display: none;
+        }
+    }
+}
