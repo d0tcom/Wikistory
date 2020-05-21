@@ -1,6 +1,5 @@
 # :scroll: Wikistory
 Wikistory permet de trouver ce qu’il s’est passé pendant une période de l’année grâce à l'API REST de Wikipedia.
-API exemple : https://fr.wikipedia.org/api/rest_v1/page/mobile-sections/1_janvier
 
 ## Technologies utilisées
 * HTML / CSS
@@ -14,3 +13,6 @@ API exemple : https://fr.wikipedia.org/api/rest_v1/page/mobile-sections/1_janvie
 
 ### À faire
 - [ ] Changer la langue (Anglais)
+
+## API
+Exemple utilisation API : https://fr.wikipedia.org/api/rest_v1/page/mobile-sections/1_janvier
